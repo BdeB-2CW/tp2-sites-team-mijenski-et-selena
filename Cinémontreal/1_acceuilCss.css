@@ -9,10 +9,16 @@ nav{
     position: fixed;
     top: 0;
     width: 100%;
-    
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 .titre{
  margin: 0 auto;
+}
+
+nav a{
+
+
+
 }
 nav ul{
     list-style-type: none;
@@ -145,6 +151,22 @@ body{
     color: white;
 }
 
+.logo{
+  display: flex;
+  height: 20px;
+  width: 20px;
+}
+.infobas{
+  display: flex;
+}
+
+.logo2{
+  float: right;
+  display: flex;
+  height: 100px;
+  width:  80px;
+}
+
 
 .sliderC {
   width: 100%;
@@ -196,6 +218,8 @@ body{
   margin-left: 25%;
   margin-right:25%;
 }
+
+
 
 
 

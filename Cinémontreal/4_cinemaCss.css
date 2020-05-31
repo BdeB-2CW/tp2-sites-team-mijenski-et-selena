@@ -95,3 +95,19 @@ table{
     width: 100%;
     color: white;
 }
+
+.logo{
+  display: flex;
+  height: 20px;
+  width: 20px;
+}
+.infobas{
+  display: flex;
+}
+
+.logo2{
+  float: right;
+  display: flex;
+  height: 100px;
+  width:  80px;
+}
