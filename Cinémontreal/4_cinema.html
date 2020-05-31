@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="4_cinemaCss.css">
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<!--menu-->
+	<nav>
+		<ul>
+			<li class="titre"><p>CinéMontréal</p></li>
+			<li>
+				<div id="root">
+				  <label for="nomCine">Nom du cinéma:</label>
+				  <input type="text" id="nomCine" name="nomCine" required minlength="4" maxlength="40" size="20"/>
+				  <input id="clickMe" type="button" value="Rechercher" onclick="rech_cinema();" />
+				</div>
+			  </li>
+		</ul>
+
+		<ul class="sous">
+					<li><a href="1_acceuil.html">maison</a></li>
+					<li><a href="2_artiste.html">Artistes</a></li>
+					<li><a href="3_horaire.html">Horaire</a></li>
+					<li><a href="4_cinema.html">Cinéma</a></li>
+					<li><a href="5_films.html">Films</a></li>
+				</ul>
+	</nav>
+
+	<div class="corps">
+
+		<div class="Cinéma">
+			<div class="im"><img src="cinemateque.jpg"></div>
+			<table>
+				<tr>
+					<th class="contenu">Aucune diffusion</th>
+					<th class="contenu">tarif normal:5$</th>
+				</tr>
+			</table>
+
+			<div class="Cinéma">
+			<div class="im"><img src="cineplex.jpg"></div>
+			<table>
+				<tr>
+					<th class="contenu">Aucune diffusion</th>
+					<th class="contenu">tarif normal:8$</th>
+				</tr>
+			</table>
+
+			<div class="Cinéma">
+			<div class="im"><img src="Guzzo.jpg"></div>
+			<table>
+				<tr>
+					<th class="contenu">Aucune diffusion</th>
+					<th class="contenu">tarif normal:10$</th>
+				</tr>
+			</table>
+
+		</div>
+		</div>
+	</div>
+</div>
+	</div>
+
+	<ul class="bas">
+	<li>seleminaki@gmail.com</li>
+	<li>1-888-950-7005</li>
+	</ul>
+
+<script src="4_cinemaJs.js"></script>
+<script src="4_cinemaJs_2.js"></script>
+</body>
+</html>

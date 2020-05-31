@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>Séléminaki</title>
+	<link rel="stylesheet" type="text/css" href="1_acceuilCss.css">
+
+</head>
+<body>
+
+	<!--menu-->
+	<nav>
+		<ul>
+			<li class="titre"><p>CinéMontréal</p></li>
+			<li>
+				<div id="root">
+				  <label for="nomFilm">Nom du film:</label>
+				  <input type="text" id="nomFilm" name="nomFilm" required minlength="4" maxlength="40" size="20"/>
+				  <input id="clickMe" type="button" value="Rechercher" onclick="rech_film();" />
+				</div>
+			  </li>
+		</ul>
+
+		<ul class="sous">
+					<li><a href="1_acceuil.html">maison</a></li>
+					<li><a href="2_artiste.html">Artistes</a></li>
+					<li><a href="3_horaire.html">Horaire</a></li>
+					<li><a href="4_cinema.html">Cinéma</a></li>
+					<li><a href="5_films.html">Films</a></li>
+				</ul>
+	</nav>
+
+	<div class="corps">
+	<h1>Artistes</h1>
+		<div class="Artistes">
+
+			<div class="portraitA">
+				<div class="imA"><img  src="Aa_daneil.jpg"></div>
+				<p class="nomA">Daniel Craig</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="Aa_jennifer.jpg"></div>
+				<p class="nomA">Jennifer Lawrence</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="Aa_leonardo.jpg"></div>
+				<p class="nomA">Leonardo DiCaprio</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="Ar_gary.jpg"></div>
+				<p class="nomA">Gary Ross</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="As_purvis.jpg"></div>
+				<p class="nomA">Neil Purvis</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="As_suzane.jpg"></div>
+				<p class="nomA">Suzanne Collins</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="Asr_cameron.jpg"></div>
+				<p class="nomA">James Cameron</p>
+			</div>
+
+			<div class="portraitA">
+				<div class="imA"><img src="Ar_cary.jpg"></div>
+				<p class="nomA">Cary Joji Fukunaga</p>
+			</div>
+
+		</div>
+
+
+
+	<h1>Cinéma</h1>
+	<div class="Cinéma">
+			<div class="sliderC">
+			 	<div class="slideC" id="1C">
+			 		<div class="imC"><img src="cinemateque.jpg">
+			 		</div>
+					<div class="portraitC"><div class="lienC"><div class="ss"><a href=""></a><p>Cinémathèque québécoise 
+						<br> Temporairement fermé</p></div></div>
+					</div>
+				</div>
+
+				<div class="slideC" id="2C">
+					<div class="imC"><img src="cineplex.jpg">
+					</div>
+			  		<div class="portraitC"><div class="lienC"><div class="ss"><a href=""></a><p>Cinéplex 
+						<br> Temporairement fermé</p></div></div>
+			  		</div>
+				</div>
+
+				<div class="slideC" id="2C">
+					<div class="imC"><img src="Guzzo.jpg">
+					</div>
+			  		<div class="portraitC"><div class="lienC"><div class="ss"><a href=""></a><p>Cinéma Guzzo 
+						<br> Temporairement fermé</p></div></div>
+			  		</div>
+				</div>
+			</div>
+	</div>
+
+	<h1>Films à jouer</h1>
+	<div class="sliderF">
+		<div class="portraitF">
+			<div class="imF"><img  src="Hunger.jpg"></div>
+			<p class="nomF">Hunger Games</p>
+		</div>
+
+		<div class="portraitF">
+			<div class="imF"><img  src="notimetodie.jpg"></div>
+			<p class="nomF">No Time To Die</p>
+		</div>
+
+		<div class="portraitF">
+			<div class="imF"><img  src="titanic.jpg"></div>
+			<p class="nomF">Titanic</p>
+		</div>
+	</div>
+</div>
+
+<!--bas-->
+<ul class="bas">
+	<li>seleminaki@gmail.com</li>
+	<li>1-888-950-7005</li>
+</ul>
+
+<script src="1_accueilJs.js"></script>
+<script src="1_accueilJs_2.js"></script>
+</body>
+</html>

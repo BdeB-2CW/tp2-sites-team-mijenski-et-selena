@@ -1,0 +1,88 @@
+body{
+    background-color: black;
+}
+nav{
+    font-size: 20px; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:black;
+    opacity:77%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+.titre{
+ margin: 0 auto;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    background-color: #333;
+    color: white; 
+}
+.menu{
+}
+
+.sous{   
+}
+
+.sous li{
+     margin: 0 auto;
+}
+
+.horaire{
+    padding:20px;
+    color: white;
+    background-color: black;
+}
+.cinema{
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+ background-color: #fff;
+}
+
+
+/*page web*/
+.corps{
+    margin:0 auto;
+    width: 75%;
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.corps h1{
+    padding-left: 45%;
+}
+.corps h2{
+    padding-left: 50px;
+}
+
+/*bas de page*/
+.bas{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}

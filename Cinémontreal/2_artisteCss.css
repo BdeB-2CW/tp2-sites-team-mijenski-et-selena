@@ -1,0 +1,144 @@
+body{
+    background-color: black;
+}
+nav{
+    font-size: 20px; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:black;
+    opacity:77%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+.titre{
+ margin: 0 auto;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    background-color: #333;
+    color: white; 
+}
+.menu{
+}
+/*défit sousmenu javais fait soumen dan cinema*/
+.sous{   
+}
+
+.sous li{
+     margin: 0 auto;
+}
+
+
+/*bas de page*/
+.bas{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+/*page web*/
+.corps{
+    margin:0 auto;
+    width: 75%;
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.corps h1{
+    padding-left: 45%;
+}
+.corps h2{
+    padding-left: 50px;
+}
+
+.slider {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+  background: linear-gradient(to top,black , red);
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  left: 18px;
+  right: 0px;
+  height: 96%;
+  width: 252px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:black;
+  color: white;
+  text-align: center;
+}
+
+.container:hover .overlay {
+  opacity: 77%;
+}
+
+.portrait {
+  width: 250px;
+  flex-shrink: 0;
+  height: 100%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: 5%;
+  margin-right: 5%;
+  height:95%;
+  background-color: white;
+}
+.portrait img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.im{
+  padding-top: 20px;
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 50%;
+  width: 70%;
+}
+.nom{
+  margin-left: 25%;
+  margin-right:25%;
+}
+
+
+.bas{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajout de films</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Dosis:400,700"
+      rel="stylesheet"
+    />
+    <link href="6_insertCss.css" rel="stylesheet" />
+  </head>
+  <body>
+
+  <!--menu-->
+
+  <nav>
+    <ul>
+        <li class="titre"><p>CinéMontréal</p></li>
+        <li>
+          <div id="root">
+            <label for="nomFilm">Nom du film:</label>
+            <input type="text" id="nomFilm" name="nomFilm" required minlength="4" maxlength="40" size="20"/>
+            <input id="clickMe" type="button" value="Rechercher" onclick="rech_film();" />
+          </div>
+        </li>
+    </ul>
+
+    <ul class="sous">
+                <li><a href="1_acceuil.html">maison</a></li>
+                <li><a href="2_artiste.html">Artistes</a></li>
+                <li><a href="3_horaire.html">Horaire</a></li>
+                <li><a href="4_cinema.html">Cinéma</a></li>
+                <li><a href="5_films.html">Films</a></li>
+            </ul>
+  </nav>
+
+    <div id="insert">
+      <h2>Insertion des films</h2>
+      <label for="id_film">No du film:</label>
+      <input type="number" id="id_film" name="id_film" required size="10"/>
+      <br>
+      <label for="titre">Titre:</label>
+      <input type="text" id="titre" name="titre" required minlength="2" maxlength="200" size="30"/>
+      <br>
+      <label for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" required minlength="2" maxlength="200" size="20"/>
+      <br>
+      <label for="realisateur">Réalisateur:</label>
+      <input type="text" id="realisateur" name="realisateur" required minlength="2" maxlength="50" size="20"/>
+      <br>
+      <label for="scenariste">Scénariste:</label>
+      <input type="text" id="scenariste" name="scenariste" required minlength="2" maxlength="50" size="20"/>
+      <br>
+      <label for="compagnie">Compagnie de production:</label>
+      <input type="text" id="compagnie" name="compagnie" required minlength="2" maxlength="200" size="20"/>
+      <br>
+      <label for="lang_origine">Langue d'origine:</label>
+      <input type="text" id="lang_origine" name="lang_origine" required minlength="2" maxlength="200" size="20"/>
+      <br>
+      <label for="information">Résumé du film:</label>
+      <input type="text" id="information" name="information" required minlength="2" maxlength="5000" size="30"/>
+      <br>
+      <label for="dvd">Disponible en DVD:</label>
+      <input type="text" id="dvd" name="dvd" required minlength="3" maxlength="3" size="10"/>
+      <br>
+      <label for="vsd">Disponible en VSD:</label>
+      <input type="text" id="vsd" name="vsd" required minlength="3" maxlength="3" size="10"/>
+      <br>
+      <label for="bande_annonce">Bande annonce:</label>
+      <input type="text" id="bande_annonce" name="bande_annonce" required minlength="2" maxlength="50" size="15"/>
+      <br>
+      <label for="duree">Durée (minutes):</label>
+      <input type="number" id="duree" name="duree" required size="10"/>
+      <br>
+      <label for="date_sortie">Date de sortie:</label>
+      <input type="number" id="date_sortie" name="date_sortie" required size="10"/>
+      <br>
+      <input id="clickMe" type="button" value="Insérer" onclick="ins_film();" />
+    </div>
+    <script src="6_insertJS.js"></script>
+    <script src="6_insertJS_2.js"></script>
+
+    <ul class="bas">
+      <li>seleminaki@gmail.com</li>
+      <li>1-888-950-7005</li>
+      </ul>
+  </body>
+</html>

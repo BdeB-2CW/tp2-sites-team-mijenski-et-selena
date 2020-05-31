@@ -1,0 +1,201 @@
+/*menu*/
+nav{
+    font-size: 20px; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:black;
+    opacity:77%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+.titre{
+ margin: 0 auto;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    background-color: #333;
+    color: white; 
+}
+.menu{
+}
+/*défit sousmenu javais fait soumen dan cinema*/
+.sous{   
+}
+
+.sous li{
+     margin: 0 auto;
+}
+/*page web en dessous*/
+body{
+    background-color: black;
+}
+.corps{
+    margin:0 auto;
+    width: 75%;
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.corps h1{
+    padding-left: 50px;
+}
+
+/*les artisiste*/
+.Artistes {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+}
+.portraitA {
+  width: 250px;
+  flex-shrink: 0;
+  height: 100%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: 5px;
+  margin-right: 5px;
+  height:95%;
+}
+.portraitA img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.imA{
+  padding-top: 20px;
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 50%;
+  width: 70%;
+}
+.nomA{
+  margin-left: 25%;
+  margin-right:25%;
+}
+
+/*fin des artistes*/
+/*début des cinémas*/
+
+.Cinéma{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+  background-color:#a3a5a2;
+  margin:0 auto;
+}
+.portraitC{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  padding-right:10px; 
+  
+}
+.imC img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  
+}
+.imC{
+  width: 60%;
+  height: 100%;
+  background-color:rgb(97, 102, 105);
+  margin:0 auto;
+}
+.lienC{
+  width: 90%;
+  height: 80%;
+  background-color:white;
+  margin-left:5%;
+  margin-top:5%;
+  margin-right:5%;
+}
+
+.ss{
+   margin:0 auto;
+   width: 10%;
+   height:10%;
+   padding-top: 10%;
+}
+
+
+.bas{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+
+.sliderC {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-x: auto;
+
+}
+.slideC {
+  width: 100%;
+  flex-shrink: 0;
+  height: 100%;
+  display: flex;
+}
+
+.sliderF {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+  background: linear-gradient(to top,black , red);
+}
+.portraitF {
+  width: 250px;
+  flex-shrink: 0;
+  height: 100%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-left: 5%;
+  margin-right: 5%;
+  height:95%;
+  background-color: white;
+}
+.portraitF img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+.imF{
+  padding-top: 20px;
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 50%;
+  width: 70%;
+}
+.nomF{
+  margin-left: 25%;
+  margin-right:25%;
+}
+
+
+
