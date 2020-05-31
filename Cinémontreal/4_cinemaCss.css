@@ -1,0 +1,97 @@
+body{
+    background-color: black;
+}
+nav{
+    font-size: 20px; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:black;
+    opacity:77%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+.titre{
+ margin: 0 auto;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    background-color: #333;
+    color: white; 
+}
+.menu{
+}
+
+.sous{   
+}
+
+.sous li{
+     margin: 0 auto;
+}
+
+.corps{
+    margin:0 auto;
+    width: 75%;
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    height: 100%;
+}
+
+.corps h1{
+    padding-left: 45%;
+}
+.corps h2{
+    padding-left: 50px;
+}
+
+.Cinéma{
+    width: 100%;
+    height:400px;
+}
+
+.Cinéma img{
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+}
+.im{
+    height: 50%;
+    width: 100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+table tr:nth-child(even) {
+  background-color: #eee;
+}
+table tr:nth-child(odd) {
+ background-color: #fff;
+}
+table{
+    width: 100%;
+    height: 50%;
+}
+
+/*bas de page*/
+.bas{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}

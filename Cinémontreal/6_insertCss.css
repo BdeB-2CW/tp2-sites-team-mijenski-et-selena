@@ -1,0 +1,87 @@
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#insert {
+  max-width: 1920px;
+  margin-left: 0 auto;
+  color:white;
+  background: linear-gradient(to top,black , red);
+  text-align: center;
+}
+
+body{
+  padding-top: 100px;
+}
+
+.ajout{
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+nav{
+  font-size: 20px; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:black;
+  opacity:77%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+.titre{
+margin: 0 auto;
+}
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  background-color: #333;
+  color: white; 
+}
+
+.sous li{
+   margin: 0 auto;
+}
+
+.bas{
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  border: 1px solid gray;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
