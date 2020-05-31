@@ -1,0 +1,161 @@
+-- Généré par Oracle SQL Developer Data Modeler 19.4.0.350.1424
+--   à :        2020-05-21 09:45:59 EDT
+--   site :      Oracle Database 11g
+--   type :      Oracle Database 11g
+
+
+
+CREATE TABLE acteur (
+    naissance       DATE NOT NULL,
+    prix            VARCHAR2(200),
+    lieu_naissance  VARCHAR2(200) NOT NULL,
+    id_acteur       NUMBER NOT NULL,
+    nom             VARCHAR2(200) NOT NULL
+);
+
+ALTER TABLE acteur ADD CONSTRAINT acteur_pk PRIMARY KEY ( id_acteur );
+
+CREATE TABLE cinema (
+    id_cinema  NUMBER NOT NULL,
+    ouverture  DATE NOT NULL,
+    adresse    VARCHAR2(200) NOT NULL,
+    nom        VARCHAR2(200) NOT NULL
+);
+
+ALTER TABLE cinema ADD CONSTRAINT cinema_pk PRIMARY KEY ( id_cinema );
+
+CREATE TABLE film (
+    id_film                     NUMBER NOT NULL,
+    titre                       VARCHAR2(200) NOT NULL,
+    genre                       VARCHAR2(200) NOT NULL,
+    realisateur                 VARCHAR2(50) NOT NULL,
+    scenariste                  VARCHAR2(50) NOT NULL,
+    compagnie                   VARCHAR2(200),
+    lang_origine                VARCHAR2(200) NOT NULL,
+    information                 VARCHAR2(5000) NOT NULL,
+    dvd                         VARCHAR2(3),
+    vsd                         VARCHAR2(3),
+    duree                       NUMBER NOT NULL,
+    date_sortie                 DATE NOT NULL,
+    bande_annonce               VARCHAR2(50),
+    realisateur_id_realisateur  NUMBER NOT NULL,
+    scenariste_id_scenariste    NUMBER NOT NULL
+);
+
+CREATE UNIQUE INDEX film__idx ON
+    film (
+        realisateur_id_realisateur
+    ASC );
+
+CREATE UNIQUE INDEX film__idxv1 ON
+    film (
+        scenariste_id_scenariste
+    ASC );
+
+ALTER TABLE film ADD CONSTRAINT film_pk PRIMARY KEY ( id_film );
+
+CREATE TABLE film_acteur (
+    acteur_id_acteur  NUMBER NOT NULL,
+    film_id_film      NUMBER NOT NULL
+);
+
+ALTER TABLE film_acteur ADD CONSTRAINT film_acteur_pk PRIMARY KEY ( acteur_id_acteur,
+                                                                    film_id_film );
+
+CREATE TABLE horaire (
+    id_horaire        NUMBER NOT NULL,
+    heure             DATE NOT NULL,
+    cinema_id_cinema  NUMBER NOT NULL,
+    film_id_film      NUMBER NOT NULL
+);
+
+ALTER TABLE horaire ADD CONSTRAINT horaire_pk PRIMARY KEY ( id_horaire );
+
+CREATE TABLE realisateur (
+    id_realisateur  NUMBER NOT NULL,
+    naissance       DATE NOT NULL,
+    prix            VARCHAR2(200),
+    lieu_naissance  VARCHAR2(200) NOT NULL,
+    nom             VARCHAR2(200) NOT NULL
+);
+
+ALTER TABLE realisateur ADD CONSTRAINT realisateur_pk PRIMARY KEY ( id_realisateur );
+
+CREATE TABLE scenariste (
+    id_scenariste   NUMBER NOT NULL,
+    naissance       DATE NOT NULL,
+    prix            VARCHAR2(200),
+    lieu_naissance  VARCHAR2(200) NOT NULL,
+    nom             VARCHAR2(200) NOT NULL
+);
+
+ALTER TABLE scenariste ADD CONSTRAINT scenariste_pk PRIMARY KEY ( id_scenariste );
+
+ALTER TABLE film_acteur
+    ADD CONSTRAINT film_acteur_acteur_fk FOREIGN KEY ( acteur_id_acteur )
+        REFERENCES acteur ( id_acteur );
+
+ALTER TABLE film_acteur
+    ADD CONSTRAINT film_acteur_film_fk FOREIGN KEY ( film_id_film )
+        REFERENCES film ( id_film );
+
+ALTER TABLE film
+    ADD CONSTRAINT film_realisateur_fk FOREIGN KEY ( realisateur_id_realisateur )
+        REFERENCES realisateur ( id_realisateur );
+
+ALTER TABLE film
+    ADD CONSTRAINT film_scenariste_fk FOREIGN KEY ( scenariste_id_scenariste )
+        REFERENCES scenariste ( id_scenariste );
+
+ALTER TABLE horaire
+    ADD CONSTRAINT horaire_cinema_fk FOREIGN KEY ( cinema_id_cinema )
+        REFERENCES cinema ( id_cinema );
+
+ALTER TABLE horaire
+    ADD CONSTRAINT horaire_film_fk FOREIGN KEY ( film_id_film )
+        REFERENCES film ( id_film );
+
+
+
+-- Rapport récapitulatif d'Oracle SQL Developer Data Modeler : 
+-- 
+-- CREATE TABLE                             7
+-- CREATE INDEX                             2
+-- ALTER TABLE                             13
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           0
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0

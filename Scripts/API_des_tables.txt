@@ -1,0 +1,717 @@
+--API de la table acteur
+
+create or replace package ACTEUR_tapi
+is
+
+type ACTEUR_tapi_rec is record (
+ID_ACTEUR  ACTEUR.ID_ACTEUR%type
+,PRIX  ACTEUR.PRIX%type
+,LIEU_NAISSANCE  ACTEUR.LIEU_NAISSANCE%type
+,NAISSANCE  ACTEUR.NAISSANCE%type
+,NOM  ACTEUR.NOM%type
+);
+type ACTEUR_tapi_tab is table of ACTEUR_tapi_rec;
+
+-- insert
+procedure ins (
+p_ID_ACTEUR in ACTEUR.ID_ACTEUR%type
+,p_PRIX in ACTEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in ACTEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in ACTEUR.NAISSANCE%type
+,p_NOM in ACTEUR.NOM%type
+);
+-- update
+procedure upd (
+p_ID_ACTEUR in ACTEUR.ID_ACTEUR%type
+,p_PRIX in ACTEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in ACTEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in ACTEUR.NAISSANCE%type
+,p_NOM in ACTEUR.NOM%type
+);
+-- delete
+procedure del (
+p_ID_ACTEUR in ACTEUR.ID_ACTEUR%type
+);
+end ACTEUR_tapi;
+
+/
+create or replace package body ACTEUR_tapi
+is
+-- insert
+procedure ins (
+p_ID_ACTEUR in ACTEUR.ID_ACTEUR%type
+,p_PRIX in ACTEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in ACTEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in ACTEUR.NAISSANCE%type
+,p_NOM in ACTEUR.NOM%type
+) is
+begin
+insert into ACTEUR(
+ID_ACTEUR
+,PRIX
+,LIEU_NAISSANCE
+,NAISSANCE
+,NOM
+) values (
+p_ID_ACTEUR
+,p_PRIX
+,p_LIEU_NAISSANCE
+,p_NAISSANCE
+,p_NOM
+);end;
+-- update
+procedure upd (
+p_ID_ACTEUR in ACTEUR.ID_ACTEUR%type
+,p_PRIX in ACTEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in ACTEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in ACTEUR.NAISSANCE%type
+,p_NOM in ACTEUR.NOM%type
+) is
+begin
+update ACTEUR set
+PRIX = p_PRIX
+,LIEU_NAISSANCE = p_LIEU_NAISSANCE
+,NAISSANCE = p_NAISSANCE
+,NOM = p_NOM
+where ID_ACTEUR = p_ID_ACTEUR;
+end;
+-- del
+procedure del (
+p_ID_ACTEUR in ACTEUR.ID_ACTEUR%type
+) is
+begin
+delete from ACTEUR
+where ID_ACTEUR = p_ID_ACTEUR;
+end;
+end ACTEUR_tapi;
+
+_______________________________________
+
+--API de la table cinema
+
+create or replace package CINEMA_tapi
+is
+
+type CINEMA_tapi_rec is record (
+OUVERTURE  CINEMA.OUVERTURE%type
+,ID_CINEMA  CINEMA.ID_CINEMA%type
+,ADRESSE  CINEMA.ADRESSE%type
+,NOM  CINEMA.NOM%type
+);
+type CINEMA_tapi_tab is table of CINEMA_tapi_rec;
+
+-- insert
+procedure ins (
+p_OUVERTURE in CINEMA.OUVERTURE%type
+,p_ID_CINEMA in CINEMA.ID_CINEMA%type
+,p_ADRESSE in CINEMA.ADRESSE%type
+,p_NOM in CINEMA.NOM%type
+);
+-- update
+procedure upd (
+p_OUVERTURE in CINEMA.OUVERTURE%type
+,p_ID_CINEMA in CINEMA.ID_CINEMA%type
+,p_ADRESSE in CINEMA.ADRESSE%type
+,p_NOM in CINEMA.NOM%type
+);
+-- delete
+procedure del (
+p_ID_CINEMA in CINEMA.ID_CINEMA%type
+);
+end CINEMA_tapi;
+
+/
+create or replace package body CINEMA_tapi
+is
+-- insert
+procedure ins (
+p_OUVERTURE in CINEMA.OUVERTURE%type
+,p_ID_CINEMA in CINEMA.ID_CINEMA%type
+,p_ADRESSE in CINEMA.ADRESSE%type
+,p_NOM in CINEMA.NOM%type
+) is
+begin
+insert into CINEMA(
+OUVERTURE
+,ID_CINEMA
+,ADRESSE
+,NOM
+) values (
+p_OUVERTURE
+,p_ID_CINEMA
+,p_ADRESSE
+,p_NOM
+);end;
+-- update
+procedure upd (
+p_OUVERTURE in CINEMA.OUVERTURE%type
+,p_ID_CINEMA in CINEMA.ID_CINEMA%type
+,p_ADRESSE in CINEMA.ADRESSE%type
+,p_NOM in CINEMA.NOM%type
+) is
+begin
+update CINEMA set
+OUVERTURE = p_OUVERTURE
+,ADRESSE = p_ADRESSE
+,NOM = p_NOM
+where ID_CINEMA = p_ID_CINEMA;
+end;
+-- del
+procedure del (
+p_ID_CINEMA in CINEMA.ID_CINEMA%type
+) is
+begin
+delete from CINEMA
+where ID_CINEMA = p_ID_CINEMA;
+end;
+end CINEMA_tapi;
+
+____________________________________________
+
+--API de la table film
+
+create or replace package FILM_tapi
+is
+
+type FILM_tapi_rec is record (
+ID_FILM  FILM.ID_FILM%type
+,SCENARISTE  FILM.SCENARISTE%type
+,INFORMATION  FILM.INFORMATION%type
+,VSD  FILM.VSD%type
+,DUREE  FILM.DUREE%type
+,BANDE_ANNONCE  FILM.BANDE_ANNONCE%type
+,GENRE  FILM.GENRE%type
+,COMPAGNIE  FILM.COMPAGNIE%type
+,REALISATEUR  FILM.REALISATEUR%type
+,TITRE  FILM.TITRE%type
+,DVD  FILM.DVD%type
+,LANG_ORIGINE  FILM.LANG_ORIGINE%type
+,DATE_SORTIE  FILM.DATE_SORTIE%type
+);
+type FILM_tapi_tab is table of FILM_tapi_rec;
+
+-- insert
+procedure ins (
+p_ID_FILM in FILM.ID_FILM%type
+,p_SCENARISTE in FILM.SCENARISTE%type
+,p_INFORMATION in FILM.INFORMATION%type
+,p_VSD in FILM.VSD%type default null 
+,p_DUREE in FILM.DUREE%type
+,p_BANDE_ANNONCE in FILM.BANDE_ANNONCE%type default null 
+,p_GENRE in FILM.GENRE%type
+,p_COMPAGNIE in FILM.COMPAGNIE%type default null 
+,p_REALISATEUR in FILM.REALISATEUR%type
+,p_TITRE in FILM.TITRE%type
+,p_DVD in FILM.DVD%type default null 
+,p_LANG_ORIGINE in FILM.LANG_ORIGINE%type
+,p_DATE_SORTIE in FILM.DATE_SORTIE%type
+);
+-- update
+procedure upd (
+p_ID_FILM in FILM.ID_FILM%type
+,p_SCENARISTE in FILM.SCENARISTE%type
+,p_INFORMATION in FILM.INFORMATION%type
+,p_VSD in FILM.VSD%type default null 
+,p_DUREE in FILM.DUREE%type
+,p_BANDE_ANNONCE in FILM.BANDE_ANNONCE%type default null 
+,p_GENRE in FILM.GENRE%type
+,p_COMPAGNIE in FILM.COMPAGNIE%type default null 
+,p_REALISATEUR in FILM.REALISATEUR%type
+,p_TITRE in FILM.TITRE%type
+,p_DVD in FILM.DVD%type default null 
+,p_LANG_ORIGINE in FILM.LANG_ORIGINE%type
+,p_DATE_SORTIE in FILM.DATE_SORTIE%type
+);
+-- delete
+procedure del (
+p_ID_FILM in FILM.ID_FILM%type
+);
+end FILM_tapi;
+
+/
+create or replace package body FILM_tapi
+is
+-- insert
+procedure ins (
+p_ID_FILM in FILM.ID_FILM%type
+,p_SCENARISTE in FILM.SCENARISTE%type
+,p_INFORMATION in FILM.INFORMATION%type
+,p_VSD in FILM.VSD%type default null 
+,p_DUREE in FILM.DUREE%type
+,p_BANDE_ANNONCE in FILM.BANDE_ANNONCE%type default null 
+,p_GENRE in FILM.GENRE%type
+,p_COMPAGNIE in FILM.COMPAGNIE%type default null 
+,p_REALISATEUR in FILM.REALISATEUR%type
+,p_TITRE in FILM.TITRE%type
+,p_DVD in FILM.DVD%type default null 
+,p_LANG_ORIGINE in FILM.LANG_ORIGINE%type
+,p_DATE_SORTIE in FILM.DATE_SORTIE%type
+) is
+begin
+insert into FILM(
+ID_FILM
+,SCENARISTE
+,INFORMATION
+,VSD
+,DUREE
+,BANDE_ANNONCE
+,GENRE
+,COMPAGNIE
+,REALISATEUR
+,TITRE
+,DVD
+,LANG_ORIGINE
+,DATE_SORTIE
+) values (
+p_ID_FILM
+,p_SCENARISTE
+,p_INFORMATION
+,p_VSD
+,p_DUREE
+,p_BANDE_ANNONCE
+,p_GENRE
+,p_COMPAGNIE
+,p_REALISATEUR
+,p_TITRE
+,p_DVD
+,p_LANG_ORIGINE
+,p_DATE_SORTIE
+);end;
+-- update
+procedure upd (
+p_ID_FILM in FILM.ID_FILM%type
+,p_SCENARISTE in FILM.SCENARISTE%type
+,p_INFORMATION in FILM.INFORMATION%type
+,p_VSD in FILM.VSD%type default null 
+,p_DUREE in FILM.DUREE%type
+,p_BANDE_ANNONCE in FILM.BANDE_ANNONCE%type default null 
+,p_GENRE in FILM.GENRE%type
+,p_COMPAGNIE in FILM.COMPAGNIE%type default null 
+,p_REALISATEUR in FILM.REALISATEUR%type
+,p_TITRE in FILM.TITRE%type
+,p_DVD in FILM.DVD%type default null 
+,p_LANG_ORIGINE in FILM.LANG_ORIGINE%type
+,p_DATE_SORTIE in FILM.DATE_SORTIE%type
+) is
+begin
+update FILM set
+SCENARISTE = p_SCENARISTE
+,INFORMATION = p_INFORMATION
+,VSD = p_VSD
+,DUREE = p_DUREE
+,BANDE_ANNONCE = p_BANDE_ANNONCE
+,GENRE = p_GENRE
+,COMPAGNIE = p_COMPAGNIE
+,REALISATEUR = p_REALISATEUR
+,TITRE = p_TITRE
+,DVD = p_DVD
+,LANG_ORIGINE = p_LANG_ORIGINE
+,DATE_SORTIE = p_DATE_SORTIE
+where ID_FILM = p_ID_FILM;
+end;
+-- del
+procedure del (
+p_ID_FILM in FILM.ID_FILM%type
+) is
+begin
+delete from FILM
+where ID_FILM = p_ID_FILM;
+end;
+end FILM_tapi;
+
+______________________________________
+
+--API de la table film_acteur
+
+create or replace package FILM_ACTEUR_tapi
+is
+
+type FILM_ACTEUR_tapi_rec is record (
+ACTEUR_ID_ACTEUR  FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,FILM_ID_FILM  FILM_ACTEUR.FILM_ID_FILM%type
+);
+type FILM_ACTEUR_tapi_tab is table of FILM_ACTEUR_tapi_rec;
+
+-- insert
+procedure ins (
+p_ACTEUR_ID_ACTEUR in FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,p_FILM_ID_FILM in FILM_ACTEUR.FILM_ID_FILM%type
+);
+-- update
+procedure upd (
+p_ACTEUR_ID_ACTEUR in FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,p_FILM_ID_FILM in FILM_ACTEUR.FILM_ID_FILM%type
+);
+-- delete
+procedure del (
+p_ACTEUR_ID_ACTEUR in FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,p_FILM_ID_FILM in FILM_ACTEUR.FILM_ID_FILM%type
+);
+end FILM_ACTEUR_tapi;
+
+/
+create or replace package body FILM_ACTEUR_tapi
+is
+-- insert
+procedure ins (
+p_ACTEUR_ID_ACTEUR in FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,p_FILM_ID_FILM in FILM_ACTEUR.FILM_ID_FILM%type
+) is
+begin
+insert into FILM_ACTEUR(
+ACTEUR_ID_ACTEUR
+,FILM_ID_FILM
+) values (
+p_ACTEUR_ID_ACTEUR
+,p_FILM_ID_FILM
+);end;
+-- update
+procedure upd (
+p_ACTEUR_ID_ACTEUR in FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,p_FILM_ID_FILM in FILM_ACTEUR.FILM_ID_FILM%type
+) is
+begin
+update FILM_ACTEUR set
+where ACTEUR_ID_ACTEUR = p_ACTEUR_ID_ACTEUR and FILM_ID_FILM = p_FILM_ID_FILM;
+end;
+-- del
+procedure del (
+p_ACTEUR_ID_ACTEUR in FILM_ACTEUR.ACTEUR_ID_ACTEUR%type
+,p_FILM_ID_FILM in FILM_ACTEUR.FILM_ID_FILM%type
+) is
+begin
+delete from FILM_ACTEUR
+where ACTEUR_ID_ACTEUR = p_ACTEUR_ID_ACTEUR and FILM_ID_FILM = p_FILM_ID_FILM;
+end;
+end FILM_ACTEUR_tapi;
+
+____________________________________________
+
+--API de la table horaire
+
+create or replace package HORAIRE_tapi
+is
+
+type HORAIRE_tapi_rec is record (
+ID_HORAIRE  HORAIRE.ID_HORAIRE%type
+,HEURE  HORAIRE.HEURE%type
+);
+type HORAIRE_tapi_tab is table of HORAIRE_tapi_rec;
+
+-- insert
+procedure ins (
+p_ID_HORAIRE in HORAIRE.ID_HORAIRE%type
+,p_HEURE in HORAIRE.HEURE%type
+);
+-- update
+procedure upd (
+p_ID_HORAIRE in HORAIRE.ID_HORAIRE%type
+,p_HEURE in HORAIRE.HEURE%type
+);
+-- delete
+procedure del (
+p_ID_HORAIRE in HORAIRE.ID_HORAIRE%type
+);
+end HORAIRE_tapi;
+
+/
+create or replace package body HORAIRE_tapi
+is
+-- insert
+procedure ins (
+p_ID_HORAIRE in HORAIRE.ID_HORAIRE%type
+,p_HEURE in HORAIRE.HEURE%type
+) is
+begin
+insert into HORAIRE(
+ID_HORAIRE
+,HEURE
+) values (
+p_ID_HORAIRE
+,p_HEURE
+);end;
+-- update
+procedure upd (
+p_ID_HORAIRE in HORAIRE.ID_HORAIRE%type
+,p_HEURE in HORAIRE.HEURE%type
+) is
+begin
+update HORAIRE set
+HEURE = p_HEURE
+where ID_HORAIRE = p_ID_HORAIRE;
+end;
+-- del
+procedure del (
+p_ID_HORAIRE in HORAIRE.ID_HORAIRE%type
+) is
+begin
+delete from HORAIRE
+where ID_HORAIRE = p_ID_HORAIRE;
+end;
+end HORAIRE_tapi;
+
+_____________________________________________
+
+--API de la table realisateur
+
+create or replace package REALISATEUR_tapi
+is
+
+type REALISATEUR_tapi_rec is record (
+ID_REALISATEUR  REALISATEUR.ID_REALISATEUR%type
+,PRIX  REALISATEUR.PRIX%type
+,LIEU_NAISSANCE  REALISATEUR.LIEU_NAISSANCE%type
+,NAISSANCE  REALISATEUR.NAISSANCE%type
+,NOM  REALISATEUR.NOM%type
+);
+type REALISATEUR_tapi_tab is table of REALISATEUR_tapi_rec;
+
+-- insert
+procedure ins (
+p_ID_REALISATEUR in REALISATEUR.ID_REALISATEUR%type
+,p_PRIX in REALISATEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in REALISATEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in REALISATEUR.NAISSANCE%type
+,p_NOM in REALISATEUR.NOM%type
+);
+-- update
+procedure upd (
+p_ID_REALISATEUR in REALISATEUR.ID_REALISATEUR%type
+,p_PRIX in REALISATEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in REALISATEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in REALISATEUR.NAISSANCE%type
+,p_NOM in REALISATEUR.NOM%type
+);
+-- delete
+procedure del (
+p_ID_REALISATEUR in REALISATEUR.ID_REALISATEUR%type
+);
+end REALISATEUR_tapi;
+
+/
+create or replace package body REALISATEUR_tapi
+is
+-- insert
+procedure ins (
+p_ID_REALISATEUR in REALISATEUR.ID_REALISATEUR%type
+,p_PRIX in REALISATEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in REALISATEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in REALISATEUR.NAISSANCE%type
+,p_NOM in REALISATEUR.NOM%type
+) is
+begin
+insert into REALISATEUR(
+ID_REALISATEUR
+,PRIX
+,LIEU_NAISSANCE
+,NAISSANCE
+,NOM
+) values (
+p_ID_REALISATEUR
+,p_PRIX
+,p_LIEU_NAISSANCE
+,p_NAISSANCE
+,p_NOM
+);end;
+-- update
+procedure upd (
+p_ID_REALISATEUR in REALISATEUR.ID_REALISATEUR%type
+,p_PRIX in REALISATEUR.PRIX%type default null 
+,p_LIEU_NAISSANCE in REALISATEUR.LIEU_NAISSANCE%type
+,p_NAISSANCE in REALISATEUR.NAISSANCE%type
+,p_NOM in REALISATEUR.NOM%type
+) is
+begin
+update REALISATEUR set
+PRIX = p_PRIX
+,LIEU_NAISSANCE = p_LIEU_NAISSANCE
+,NAISSANCE = p_NAISSANCE
+,NOM = p_NOM
+where ID_REALISATEUR = p_ID_REALISATEUR;
+end;
+-- del
+procedure del (
+p_ID_REALISATEUR in REALISATEUR.ID_REALISATEUR%type
+) is
+begin
+delete from REALISATEUR
+where ID_REALISATEUR = p_ID_REALISATEUR;
+end;
+end REALISATEUR_tapi;
+
+__________________________________________________
+
+--API de la table scenariste
+
+create or replace package SCENARISTE_tapi
+is
+
+type SCENARISTE_tapi_rec is record (
+ID_SCENARISTE  SCENARISTE.ID_SCENARISTE%type
+,PRIX  SCENARISTE.PRIX%type
+,LIEU_NAISSANCE  SCENARISTE.LIEU_NAISSANCE%type
+,NAISSANCE  SCENARISTE.NAISSANCE%type
+,NOM  SCENARISTE.NOM%type
+);
+type SCENARISTE_tapi_tab is table of SCENARISTE_tapi_rec;
+
+-- insert
+procedure ins (
+p_ID_SCENARISTE in SCENARISTE.ID_SCENARISTE%type
+,p_PRIX in SCENARISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in SCENARISTE.LIEU_NAISSANCE%type
+,p_NAISSANCE in SCENARISTE.NAISSANCE%type
+,p_NOM in SCENARISTE.NOM%type
+);
+-- update
+procedure upd (
+p_ID_SCENARISTE in SCENARISTE.ID_SCENARISTE%type
+,p_PRIX in SCENARISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in SCENARISTE.LIEU_NAISSANCE%type
+,p_NAISSANCE in SCENARISTE.NAISSANCE%type
+,p_NOM in SCENARISTE.NOM%type
+);
+-- delete
+procedure del (
+p_ID_SCENARISTE in SCENARISTE.ID_SCENARISTE%type
+);
+end SCENARISTE_tapi;
+
+/
+create or replace package body SCENARISTE_tapi
+is
+-- insert
+procedure ins (
+p_ID_SCENARISTE in SCENARISTE.ID_SCENARISTE%type
+,p_PRIX in SCENARISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in SCENARISTE.LIEU_NAISSANCE%type
+,p_NAISSANCE in SCENARISTE.NAISSANCE%type
+,p_NOM in SCENARISTE.NOM%type
+) is
+begin
+insert into SCENARISTE(
+ID_SCENARISTE
+,PRIX
+,LIEU_NAISSANCE
+,NAISSANCE
+,NOM
+) values (
+p_ID_SCENARISTE
+,p_PRIX
+,p_LIEU_NAISSANCE
+,p_NAISSANCE
+,p_NOM
+);end;
+-- update
+procedure upd (
+p_ID_SCENARISTE in SCENARISTE.ID_SCENARISTE%type
+,p_PRIX in SCENARISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in SCENARISTE.LIEU_NAISSANCE%type
+,p_NAISSANCE in SCENARISTE.NAISSANCE%type
+,p_NOM in SCENARISTE.NOM%type
+) is
+begin
+update SCENARISTE set
+PRIX = p_PRIX
+,LIEU_NAISSANCE = p_LIEU_NAISSANCE
+,NAISSANCE = p_NAISSANCE
+,NOM = p_NOM
+where ID_SCENARISTE = p_ID_SCENARISTE;
+end;
+-- del
+procedure del (
+p_ID_SCENARISTE in SCENARISTE.ID_SCENARISTE%type
+) is
+begin
+delete from SCENARISTE
+where ID_SCENARISTE = p_ID_SCENARISTE;
+end;
+end SCENARISTE_tapi;
+
+--API de la table artiste
+
+create or replace package ARTISTE_tapi
+is
+
+type ARTISTE_tapi_rec is record (
+PRIX  ARTISTE.PRIX%type
+,LIEU_NAISSANCE  ARTISTE.LIEU_NAISSANCE%type
+,ID_ARTISTE  ARTISTE.ID_ARTISTE%type
+,NAISSANCE  ARTISTE.NAISSANCE%type
+,NOM  ARTISTE.NOM%type
+);
+type ARTISTE_tapi_tab is table of ARTISTE_tapi_rec;
+
+-- insert
+procedure ins (
+p_PRIX in ARTISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in ARTISTE.LIEU_NAISSANCE%type default null 
+,p_ID_ARTISTE in ARTISTE.ID_ARTISTE%type
+,p_NAISSANCE in ARTISTE.NAISSANCE%type default null 
+,p_NOM in ARTISTE.NOM%type
+);
+-- update
+procedure upd (
+p_PRIX in ARTISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in ARTISTE.LIEU_NAISSANCE%type default null 
+,p_ID_ARTISTE in ARTISTE.ID_ARTISTE%type
+,p_NAISSANCE in ARTISTE.NAISSANCE%type default null 
+,p_NOM in ARTISTE.NOM%type
+);
+-- delete
+procedure del (
+p_ID_ARTISTE in ARTISTE.ID_ARTISTE%type
+);
+end ARTISTE_tapi;
+
+/
+create or replace package body ARTISTE_tapi
+is
+-- insert
+procedure ins (
+p_PRIX in ARTISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in ARTISTE.LIEU_NAISSANCE%type default null 
+,p_ID_ARTISTE in ARTISTE.ID_ARTISTE%type
+,p_NAISSANCE in ARTISTE.NAISSANCE%type default null 
+,p_NOM in ARTISTE.NOM%type
+) is
+begin
+insert into ARTISTE(
+PRIX
+,LIEU_NAISSANCE
+,ID_ARTISTE
+,NAISSANCE
+,NOM
+) values (
+p_PRIX
+,p_LIEU_NAISSANCE
+,p_ID_ARTISTE
+,p_NAISSANCE
+,p_NOM
+);end;
+-- update
+procedure upd (
+p_PRIX in ARTISTE.PRIX%type default null 
+,p_LIEU_NAISSANCE in ARTISTE.LIEU_NAISSANCE%type default null 
+,p_ID_ARTISTE in ARTISTE.ID_ARTISTE%type
+,p_NAISSANCE in ARTISTE.NAISSANCE%type default null 
+,p_NOM in ARTISTE.NOM%type
+) is
+begin
+update ARTISTE set
+PRIX = p_PRIX
+,LIEU_NAISSANCE = p_LIEU_NAISSANCE
+,NAISSANCE = p_NAISSANCE
+,NOM = p_NOM
+where ID_ARTISTE = p_ID_ARTISTE;
+end;
+-- del
+procedure del (
+p_ID_ARTISTE in ARTISTE.ID_ARTISTE%type
+) is
+begin
+delete from ARTISTE
+where ID_ARTISTE = p_ID_ARTISTE;
+end;
+end ARTISTE_tapi;
+

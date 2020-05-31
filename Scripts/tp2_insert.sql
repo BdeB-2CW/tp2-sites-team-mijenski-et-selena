@@ -1,0 +1,36 @@
+﻿Insert into ACTEUR (NAISSANCE,PRIX,LIEU_NAISSANCE,ID_ACTEUR,NOM) values (to_date('74-11-11','RR-MM-DD'),'Oscar du meilleur acteur (2016), AACTA Award du meilleur acteur (2014)','Los Angeles, Californie, USA','1','Leonardo Dicaprio');
+Insert into ACTEUR (NAISSANCE,PRIX,LIEU_NAISSANCE,ID_ACTEUR,NOM) values (to_date('90-08-15','RR-MM-DD'),'Golden Globe de la meilleure actrice dans un film ou comedie (2016), Teen Choice Award du meilleur baiser (2013)','Indian Hills, Kentucky, USA','2','Jennifer Lawrence');
+Insert into ACTEUR (NAISSANCE,PRIX,LIEU_NAISSANCE,ID_ACTEUR,NOM) values (to_date('68-03-02','RR-MM-DD'),'Meilleur acteur de film d action (2013), Meilleur acteur (2009)','Chester, Angleterre, UK','3','Daniel Craig');
+
+Insert into CINEMA (ID_CINEMA,OUVERTURE,ADRESSE,NOM) values ('100',to_date('20-06-30','RR-MM-DD'),'5940 Boulevard des Grandes-Prairies, Montréal, QC H1P 1A4','Cinema Guzzo');
+Insert into CINEMA (ID_CINEMA,OUVERTURE,ADRESSE,NOM) values ('101',to_date('20-06-30','RR-MM-DD'),'335 Boul. de Maisonneuve E, Montréal, QC H2X 1K1','Cinematheque quebecoise');
+Insert into CINEMA (ID_CINEMA,OUVERTURE,ADRESSE,NOM) values ('102',to_date('20-06-30','RR-MM-DD'),'7077 Blvd. Newman, LaSalle, QC H8N 1X1','Cinema Famous Player');
+
+Insert into FILM (ID_FILM,TITRE,GENRE,REALISATEUR,SCENARISTE,COMPAGNIE,LANG_ORIGINE,INFORMATION,DVD,VSD,DUREE,DATE_SORTIE,BANDE_ANNONCE) values ('1000','Titanic','Drame romantique','James Cameron','James Cameron','20th Century Fox','anglais','En 1997, l''épave du Titanic est l''objet d''une exploration fiévreuse, menée par des chercheurs de trésor en quête d''un diamant bleu qui se trouvait à bord. Frappée par un reportage télévisé, l''une des rescapés du naufrage, âgée de 102 ans, Rose DeWitt, se rend sur place et évoque ses souvenirs. 1912. Fiancée à un industriel arrogant, Rose croise sur le bateau un artiste sans le sou.','oui','oui','188',to_date('97-11-18','RR-MM-DD'),'disponible');
+Insert into FILM (ID_FILM,TITRE,GENRE,REALISATEUR,SCENARISTE,COMPAGNIE,LANG_ORIGINE,INFORMATION,DVD,VSD,DUREE,DATE_SORTIE,BANDE_ANNONCE) values ('1001','Hunger Games','Suspense de science-fiction','Gary Ross','Suzanne Collins, Gary Ross','Alliance Vivafilm','anglais','Après que sa soeur a été sélectionnée pour participer aux violents ''Hunger Games'','' Katniss Everdeen décide de se porter volontaire pour libérer sa soeur de son fardeau. La jeune femme et son comparse du District 12, Peeta, devront affronter 22 autres adolescents ayant entre 12 et 18 ans, jusqu''à la mort.','oui','oui','142',to_date('12-03-23','RR-MM-DD'),'disponible');
+Insert into FILM (ID_FILM,TITRE,GENRE,REALISATEUR,SCENARISTE,COMPAGNIE,LANG_ORIGINE,INFORMATION,DVD,VSD,DUREE,DATE_SORTIE,BANDE_ANNONCE) values ('1002','No Time to Die','Espionnage','Cary Joji Fukunaga','Cary Joji Fukunaga, Neal Purvis','EON Productions MGM','anglais','James Bond n''est plus en service et profite d''une vie tranquille en Jamaïque. Mais son répit est de courte durée car l''agent de la CIA Felix Leiter fait son retour pour lui demander son aide. Sa mission, qui est de secourir un scientifique kidnappé, va se révéler plus traître que prévu, et mener 007 sur la piste d''un méchant possédant une nouvelle technologie particulièrement dangereuse.','non','non','163',to_date('20-11-25','RR-MM-DD'),'disponible');
+
+Insert into FILM_ACTEUR (ACTEUR_ID_ACTEUR,FILM_ID_FILM) values ('1','1000');
+Insert into FILM_ACTEUR (ACTEUR_ID_ACTEUR,FILM_ID_FILM) values ('2','1001');
+Insert into FILM_ACTEUR (ACTEUR_ID_ACTEUR,FILM_ID_FILM) values ('3','1002');
+
+Insert into HORAIRE (ID_HORAIRE,HEURE) values ('10',to_date('20-06-30','RR-MM-DD'));
+Insert into HORAIRE (ID_HORAIRE,HEURE) values ('11',to_date('20-06-30','RR-MM-DD'));
+Insert into HORAIRE (ID_HORAIRE,HEURE) values ('12',to_date('20-06-30','RR-MM-DD'));
+
+Insert into REALISATEUR (ID_REALISATEUR,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('200',to_date('54-08-16','RR-MM-DD'),'Golden Globe du meilleur film dramatique (1998, 2010), Golden Globe du meilleur réalisateur (1998, 2010)','Kapuskasing, Ontario, Canada','James Cameron');
+Insert into REALISATEUR (ID_REALISATEUR,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('201',to_date('56-11-03','RR-MM-DD'),'Prix des enfants du meilleur film (2010), Saturn Awards meilleur scénario (1990)','Los Angeles, Californie, USA','Gary Ross');
+Insert into REALISATEUR (ID_REALISATEUR,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('202',to_date('77-07-10','RR-MM-DD'),'Meilleure réalisation pour une série télévisée dramatique du Primetime Emmy Awards (2014), Prix du jury du Festival du cinéma américain de Deauville(2009)','Oakland, Californie, USA','Cary Joji Fukunaga');
+
+Insert into SCENARISTE (ID_SCENARISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('300',to_date('54-08-16','RR-MM-DD'),'Golden Globe du meilleur film dramatique (1998, 2010), Golden Globe du meilleur réalisateur (1998, 2010)','Kapuskasing, Ontario, Canada','James Cameron');
+Insert into SCENARISTE (ID_SCENARISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('301',to_date('62-08-10','RR-MM-DD'),null,'Hartford, Connecticut,USA','Suzanne Collins');
+Insert into SCENARISTE (ID_SCENARISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('302',to_date('61-09-09','RR-MM-DD'),null,'Royaume-Uni','Neal Purvis');
+
+Insert into ARTISTE (NAISSANCE,PRIX,LIEU_NAISSANCE,ID_ARTISTE,NOM) values (to_date('74-11-11','RR-MM-DD'),'Oscar du meilleur acteur (2016), AACTA Award du meilleur acteur (2014)','Los Angeles, Californie, USA','1','Leonardo Dicaprio');
+Insert into ARTISTE (NAISSANCE,PRIX,LIEU_NAISSANCE,ID_ARTISTE,NOM) values (to_date('90-08-15','RR-MM-DD'),'Golden Globe de la meilleure actrice dans un film ou comedie (2016), Teen Choice Award du meilleur baiser (2013)','Indian Hills, Kentucky, USA','2','Jennifer Lawrence');
+Insert into ARTISTE (NAISSANCE,PRIX,LIEU_NAISSANCE,ID_ARTISTE,NOM) values (to_date('68-03-02','RR-MM-DD'),'Meilleur acteur de film d action (2013), Meilleur acteur (2009)','Chester, Angleterre, UK','3','Daniel Craig');
+Insert into ARTISTE (ID_ARTISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('4',to_date('54-08-16','RR-MM-DD'),'Golden Globe du meilleur film dramatique (1998, 2010), Golden Globe du meilleur réalisateur (1998, 2010)','Kapuskasing, Ontario, Canada','James Cameron');
+Insert into ARTISTE (ID_ARTISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('5',to_date('56-11-03','RR-MM-DD'),'Prix des enfants du meilleur film (2010), Saturn Awards meilleur scénario (1990)','Los Angeles, Californie, USA','Gary Ross');
+Insert into ARTISTE (ID_ARTISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('6',to_date('77-07-10','RR-MM-DD'),'Meilleure réalisation pour une série télévisée dramatique du Primetime Emmy Awards (2014), Prix du jury du Festival du cinéma américain de Deauville(2009)','Oakland, Californie, USA','Cary Joji Fukunaga');
+Insert into ARTISTE (ID_ARTISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('7',to_date('62-08-10','RR-MM-DD'),null,'Hartford, Connecticut,USA','Suzanne Collins');
+Insert into ARTISTE (ID_ARTISTE,NAISSANCE,PRIX,LIEU_NAISSANCE,NOM) values ('8',to_date('61-09-09','RR-MM-DD'),null,'Royaume-Uni','Neal Purvis');
